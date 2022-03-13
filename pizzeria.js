@@ -1,240 +1,191 @@
+/* connexió a base de dades */
 var db = connect('mongodb://localhost/pizzeria');
-/* categories pizza */
-db.createCollection('categoria_pizza');
-db.categoria_pizza.insertMany([
-    {
-        _id: 1,
-        nom: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
-    },
-    {
-        _id: 2,
-        nom: 'Mitjanes a 5.95 a recollir en botiga'
-    },
-    {
-        _id: 3,
-        nom: 'Pizza mitjana més beguda a 9.95 a domicili'
-    }
-]);
 /* productes a la venda */
+/*
 db.createCollection('producte');
 db.producte.insertMany([
     {
-        _id: 1,
         nom: 'Pizza mitjana Carbonara',
         descripcio: 'Masa fresca, doble de bacon, champinyons, salsa carbonara, formatge fos i extra de formatge fos',
         imatge: 'imatges/carbonara.jpg',
         preu: 9.45,
-        tipus: 'pizza',
-        categoria_pizza_id: 1
+        tipus: 'pizzes',
+        categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
     },
     {
-        _id: 2,
         nom: 'Pizza mitjana Pepperoni',
         descripcio: 'La nostra masa de sempre acompanyada de doble racció de pepperoni i formatge fos.',
         imatge: 'imatges/pepperoni.jpg',
         preu: 9.45,
-        tipus: 'pizza',
-        categoria_pizza_id: 1
+        tipus: 'pizzes',
+        categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
     },
     {
-        _id: 3,
         nom: 'Pizza mitjana 4 formatges',
         descripcio: 'Masa fresca, mescla de quatre formatges i tomàquet.',
         imatge: 'imatges/4quesos.jpg',
         preu: 9.45,
-        tipus: 'pizza',
-        categoria_pizza_id: 1
+        tipus: 'pizzes',
+        categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
     },
     {
-        _id: 4,
         nom: 'Pizza mitjana Barbacoa',
-        descripcio: 'MMasa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
+        descripcio: 'Masa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
         imatge: 'imatges/carbonara.jpg',
         preu: 9.45,
-        tipus: 'pizza',
-        categoria_pizza_id: 1
+        tipus: 'pizzes',
+        categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
     },
     {
-        _id: 5,
         nom: 'Pizza mitjana Carbonara',
         descripcio: 'Masa fresca, doble de bacon, champinyons, salsa carbonara, formatge fos i extra de formatge fos',
         imatge: 'imatges/carbonara.jpg',
         preu: 5.95,
-        tipus: 'pizza',
-        categoria_pizza_id: 2,
+        tipus: 'pizzes',
+        categoria_pizza: 'Mitjanes a 5.95 a recollir en botiga',
     },
     {
-        _id: 6,
         nom: 'Pizza mitjana Pepperoni',
         descripcio: 'La nostra masa de sempre acompanyada de doble racció de pepperoni i formatge fos.',
         imatge: 'imatges/pepperoni.jpg',
         preu: 5.95,
-        tipus: 'pizza',
-        categoria_pizza_id: 2
+        tipus: 'pizzes',
+        categoria_pizza: 'Mitjanes a 5.95 a recollir en botiga'
     },
     {
-        _id: 7,
         nom: 'Pizza mitjana 4 formatges',
         descripcio: 'Masa fresca, mescla de quatre formatges i tomàquet.',
         imatge: 'imatges/4quesos.jpg',
         preu: 5.95,
-        tipus: 'pizza',
-        categoria_pizza_id: 2
+        tipus: 'pizzes',
+        categoria_pizza: 'Mitjanes a 5.95 a recollir en botiga'
     },
     {
-        _id: 8,
         nom: 'Pizza mitjana Barbacoa',
-        descripcio: 'MMasa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
+        descripcio: 'Masa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
         imatge: 'imatges/carbonara.jpg',
         preu: 5.95,
-        tipus: 'pizza',
-        categoria_pizza_id: 2
+        tipus: 'pizzes',
+        categoria_pizza: 'Mitjanes a 5.95 a recollir en botiga'
     },
     {
-        _id: 9,
         nom: 'Pizza mitjana Carbonara',
         descripcio: 'Masa fresca, doble de bacon, champinyons, salsa carbonara, formatge fos i extra de formatge fos',
         imatge: 'imatges/carbonara.jpg',
-        preu: 7.00,
-        tipus: 'pizza',
-        categoria_pizza_id: 3
+        preu: 9.95,
+        tipus: 'pizzes',
+        categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
     },
     {
-        _id: 10,
         nom: 'Pizza mitjana Pepperoni',
         descripcio: 'La nostra masa de sempre acompanyada de doble racció de pepperoni i formatge fos.',
         imatge: 'imatges/pepperoni.jpg',
-        preu: 7.00,
-        tipus: 'pizza',
-        categoria_pizza_id: 3
+        preu: 9.95,
+        tipus: 'pizzes',
+        categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
     },
     {
-        _id: 11,
         nom: 'Pizza mitjana 4 formatges',
         descripcio: 'Masa fresca, mescla de quatre formatges i tomàquet.',
         imatge: 'imatges/4quesos.jpg',
-        preu: 7.00,
-        tipus: 'pizza',
-        categoria_pizza_id: 3
+        preu: 9.95,
+        tipus: 'pizzes',
+        categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
     },
     {
-        _id: 12,
         nom: 'Pizza mitjana Barbacoa',
-        descripcio: 'MMasa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
+        descripcio: 'Masa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
         imatge: 'imatges/carbonara.jpg',
-        preu: 7.00,
-        tipus: 'pizza',
-        categoria_pizza_id: 3
+        preu: 9.95,
+        tipus: 'pizzes',
+        categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
     },
     {
-        _id: 13,
         nom: 'Clàsica',
         descripcio: 'La nostra carn a la graella, acompanyada de cogombret, kétchup i mostassa.',
         imatge: 'imatges/burguer.jpg',
         preu: 4.95,
-        tipus: 'hamburguesa',
-        categoria_pizza_id: null
+        tipus: 'hamburgueses',
+        categoria_pizza: ""
     },
     {
-        _id: 14,
         nom: 'Pollastre',
         descripcio: 'Carn de pollastre empanat i lleugerament especiat, enciam i maionesa',
         imatge: 'imatges/pepperoni.jpg',
         preu: 4.95,
-        tipus: 'hamburguesa',
-        categoria_pizza_id: null
+        tipus: 'hamburgueses',
+        categoria_pizza: ""
     },
     {
-        _id: 15,
         nom: 'Coca-cola',
-        descripcio: 'Sent la seva màgia',
-        imatge: 'imatges/Coca-cola.jpg',
-        preu: 2.95,
+        descripcio: 'Ampolla 33cl',
+        imatge: 'imatges/coca-cola.jpg',
+        preu: 2.35,
         tipus: 'begudes',
-        categoria_pizza_id: null
+        categoria_pizza: ""
+    },
+    {
+        nom: 'Coca-cola (inclosa amb la pizza)',
+        descripcio: 'Ampolla 33cl',
+        imatge: 'imatges/coca-cola.jpg',
+        preu: 0,
+        tipus: 'begudes',
+        categoria_pizza: ""
+    },
+    {
+        nom: 'Aigua Bezoya',
+        descripcio: 'Ampolla 33cl',
+        imatge: 'imatges/aigua.jpg',
+        preu: 1.5,
+        tipus: 'begudes',
+        categoria_pizza: ""
     }
 ]);
- /* provincies */
- db.createCollection('provincia');
- db.provincia. insertOne(
-     {
-        _id: 1,
-        nom: 'Barcelona'
-     }
- );
- /* localitats */
- db.createCollection('localitat');
- db.localitat.insertMany([
- {
-     _id: 1, nom: 'Igualada',
-     provincia_id: 1
- },
- {
-     _id: 2, nom: 'Santa Margarida de montbui',
-     provincia_id: 1
- },
- {
-     _id: 3, nom: 'Vilanova del Camí',
-     provincia_id: 1
- }
- ]);
-/* dades botiga */
+/* botiga i empleats */
 db.createCollection('botiga');
-db.botiga.insertMany([
-    {
-        _id: 1,
-        carrer: 'Avinguda Caresmar',
-        numero: '23',
-        codi_postal: '08700',
-        localitat_id: 1,
-        telefon: '938053838'
-    }
-]);
-/* Empleats de la pizzeria */
-db.createCollection('empleat');
-db.empleat.insertMany([
-    {
-        _id: 1,
-        nom: 'Judit',
-        cognoms: 'Sans Poblet',
-        nif: '26507643M',
-        telefon: '621547813',
-        rol: 'repartidor',
-        botiga_id: 1
-    },
-    {
-        _id: 2,
-        nom: 'Francesc',
-        cognoms: 'Hernandez Doncel',
-        nif: '43598611H',
-        telefon: '687285193',
-        rol: 'cuiner',
-        botiga_id: 1
-    },
-    {
-        _id: 3,
-        nom: 'Anna Maria',
-        cognoms: 'Verdú Castells',
-        nif: '28568625A',
-        telefon: '647276917',
-        rol: 'cuiner',
-        botiga_id: 1
-    },
-    {
-        _id: 4,
-        nom: 'Albert',
-        cognoms: 'Compte Oriol',
-        nif: '98921097Y',
-        telefon: '697523748',
-        rol: 'repartidor',
-        botiga_id: 1
-    }
-]);
+db.botiga.insertOne({
+    botiga_id: 1,
+    carrer: 'Avinguda Caresmar',
+    numero: '23',
+    codi_postal: '08700',
+    localitat: 'Igualada',
+    telefon: '938053838',
+    empleat: [
+        {
+            nom: 'Judit',
+            cognoms: 'Sans Poblet',
+            nif: '26507643M',
+            telefon: '621547813',
+            rol: 'repartidor'
+        },
+        {
+            nom: 'Francesc',
+            cognoms: 'Hernandez Doncel',
+            nif: '43598611H',
+            telefon: '687285193',
+            rol: 'cuiner'
+        },
+        {
+            nom: 'Anna Maria',
+            cognoms: 'Verdú Castells',
+            nif: '28568625A',
+            telefon: '647276917',
+            rol: 'cuiner'
+        },
+        {
+            nom: 'Albert',
+            cognoms: 'Compte Oriol',
+            nif: '98921097Y',
+            telefon: '697523748',
+            rol: 'repartidor'
+        }
+    ]
+});
 /* dades clients */
+/*
 db.createCollection('dades_client');
 db.dades_client.insertMany([
     {
-        _id: 1,
         nom: 'Jordi',
         cognom1: 'Sanchez',
         cognom2: 'Terol',
@@ -243,24 +194,22 @@ db.dades_client.insertMany([
         pis: '3',
         porta: 'A',
         codi_postal: '08700',
-        localitat_id: 1,
+        localitat: 'Igualada',
         telefon: '624879245'
     },
     {
-        _id: 2,
         nom: 'Anna',
-        cognom1: 'López',
+        cognom1: 'Lopez',
         cognom2: 'Carrillo',
         carrer: 'Carrer de la Virtut',
         numero: '24',
         pis: '4',
         porta: 'A',
-        localitat_id: 1,
+        localitat: 'Igualada',
         codi_postal: '08700',
         telefon: '687541827'
     },
     {
-        _id: 3,
         nom: 'Gregori',
         cognom1: 'Jimenez',
         cognom2: 'Alvarez',
@@ -268,12 +217,11 @@ db.dades_client.insertMany([
         numero: '24',
         pis: '1',
         porta: 'B',
-        localitat_id: 3,
+        localitat: 'Vilanova del Camí',
         codi_postal: '08788',
         telefon: '699458785'
     },
     {
-        _id: 4,
         nom: 'Antonia',
         cognom1: 'Perez',
         cognom2: 'Cobos',
@@ -282,11 +230,10 @@ db.dades_client.insertMany([
         pis: '4',
         porta: 'B',
         codi_postal: '08710',
-        localitat_id: 2,
+        localitat: 'Santa Margarida de Montbui',
         telefon: '632782698',
     },
     {
-        _id: 5,
         nom: 'Bernat',
         cognom1: 'Figueres',
         cognom2: 'Roca',
@@ -295,33 +242,31 @@ db.dades_client.insertMany([
         pis: '2',
         porta: 'B',
         codi_postal: '08700',
-        localitat_id: 1,
+        localitat: 'Igualada',
         telefon: '618205849',
     },
     {
-        _id: 6,
         nom: 'Karen',
         cognom1: 'Zuñiga',
         cognom2: 'Flores',
-        adreca: 'Carrer Doctor Fleming',
+        carrer: 'Carrer Doctor Fleming',
         numero: '9',
         pis: '2',
         porta: 'B',
         codi_postal: '08710',
-        localitat_id: 2,
+        localitat: 'Santa Margarida de Montbui',
         telefon: '699213515',
     },
     {
-        _id: 7,
         nom: 'Alícia',
         cognom1: 'Cárdenas',
         cognom2: 'Herrera',
-        adreca: 'Carrer Santa Maria',
+        carrer: 'Carrer Santa Maria',
         numero: '20',
         pis: '3',
         porta: 'A',
         codi_postal: '08700',
-        localitat_id: 1,
+        localitat: 'Igualada',
         telefon: '691452387',
     }
 ]);
@@ -333,51 +278,437 @@ db.comanda.insertMany([
         botiga_id: 1,
         data_hora_botiga: ISODate('2020-05-18T19:45:12Z'),
         preu_total: 28.35,
-        client_id: 4,
+        client: {
+            nom: 'Antonia',
+            cognom1: 'Perez',
+            cognom2: 'Cobos',
+            carrer: 'Carrer Sant Jordi',
+            numero: '16',
+            pis: '4',
+            porta: 'B',
+            codi_postal: '08710',
+            localitat: 'Santa Margarida de Montbui',
+            telefon: '632782698',
+        },
         tipus: 'repartiment a domicili',
-        empleat_id: 4,
-        data_hora_domicili: ISODate('2020-05-10T22:15:00Z')
+        empleat: {
+            nom: 'Albert',
+            rol: 'repartidor'
+        },
+        data_hora_domicili: ISODate('2020-05-10T22:15:00Z'),
+        detall_comanda: {
+            pizza: [
+                {
+                    nom: 'Pizza mitjana Carbonara',
+                    descripcio: 'Masa fresca, doble de bacon, champinyons, salsa carbonara, formatge fos i extra de formatge fos',
+                    imatge: 'imatges/carbonara.jpg',
+                    preu: 9.45,
+                    tipus: 'pizzes',
+                    categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
+                },
+                {
+                    nom: 'Pizza mitjana Pepperoni',
+                    descripcio: 'La nostra masa de sempre acompanyada de doble racció de pepperoni i formatge fos.',
+                    imatge: 'imatges/pepperoni.jpg',
+                    preu: 9.45,
+                    tipus: 'pizzes',
+                    categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
+                },
+                {
+                    nom: 'Pizza mitjana 4 formatges',
+                    descripcio: 'Masa fresca, mescla de quatre formatges i tomàquet.',
+                    imatge: 'imatges/4quesos.jpg',
+                    preu: 9.45,
+                    tipus: 'pizzes',
+                    categoria_pizza: '3 pizzes mitjanes a 9.45 cadascuna a domicili'
+                }
+            ],
+            hamburguesa: [],
+            beguda: []
+        }
     },
     {
         _id: 2,
-        botiga_id: 1,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
         data_hora_botiga: ISODate('2020-06-21T20:52:08Z'),
-        preu_total: 17.80,
-        client_id: 6,
+        preu_total: 16.6,
+        client: {
+            nom: 'Karen',
+            cognom1: 'Zuñiga',
+            cognom2: 'Flores',
+            carrer: 'Carrer Doctor Fleming',
+            numero: '9',
+            pis: '2',
+            porta: 'B',
+            codi_postal: '08710',
+            localitat: 'Santa Margarida de Montbui',
+            telefon: '699213515',
+        },
         tipus: 'recollir en botiga',
-        empleat_id: null,
-        data_hora_domicili: null
+        'botiga.empleat': {
+            nom: "Albert",
+            rol: 'repartidor'
+        },
+        data_hora_domicili: null,
+        detall_comanda: {
+            pizza: [
+                {
+                    nom: 'Pizza mitjana Carbonara',
+                    descripcio: 'Masa fresca, doble de bacon, champinyons, salsa carbonara, formatge fos i extra de formatge fos',
+                    imatge: 'imatges/carbonara.jpg',
+                    preu: 5.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Mitjanes a 5.95 a recollir en botiga',
+                },
+                {
+                    nom: 'Pizza mitjana Pepperoni',
+                    descripcio: 'La nostra masa de sempre acompanyada de doble racció de pepperoni i formatge fos.',
+                    imatge: 'imatges/pepperoni.jpg',
+                    preu: 5.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Mitjanes a 5.95 a recollir en botiga'
+                }
+            ],
+            hamburguesa: [],
+            beguda: [
+                {
+                    nom: 'Coca-cola',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 2.35,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                },
+                {
+                    nom: 'Coca-cola',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 2.35,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                }
+            ]
+        }
     },
     {
         _id: 3,
-        botiga_id: 1,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
         data_hora_botiga: ISODate('2020-09-26T19:56:01Z'),
         preu_total: 9.95,
-        client_id: 2,
+        client: {
+             nom: 'Anna',
+            cognom1: 'Lopez',
+            cognom2: 'Carrillo',
+            carrer: 'Carrer de la Virtut',
+            numero: '24',
+            pis: '4',
+            porta: 'A',
+            localitat: 'Igualada',
+            codi_postal: '08700',
+            telefon: '687541827'
+        },
         tipus: 'repartiment a domicili',
-        empleat_id: 1,
-        data_hora_domicili: ISODate('2020-06-21T20:52:08Z')
-    }
-]);
-/* detalls comandes */
-db.createCollection('detall_comanda');
-db.detall_comanda.insertMany([
-    {
-        comanda_id: 1,
-        pizza_id: 1,
-        hamburguesa_id: null,
-        begudes_id: null
+        'botiga.empleat': {
+            nom: 'Judit',
+            rol: 'repartidor'
+        },
+        data_hora_domicili: ISODate('2020-06-21T20:52:08Z'),
+        detall_comanda: {
+            pizza: [
+                {
+                    nom: 'Pizza mitjana Barbacoa',
+                    descripcio: 'Masa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
+                    imatge: 'imatges/carbonara.jpg',
+                    preu: 9.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
+                }
+            ],
+            hamburguesa: [],
+            beguda: [
+                {
+                    nom: 'Coca-cola (inclosa amb la pizza)',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 0,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                }
+            ]
+        }
     },
     {
-        comanda_id: 1,
-        pizza_id: 2,
-        hamburguesa_id: null,
-        begudes_id: null,
+        _id: 4,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
+        data_hora_botiga: ISODate('2020-10-02T20:02:09Z'),
+        preu_total: 17.25,
+        client: {
+            nom: 'Bernat',
+            cognom1: 'Figueres',
+            cognom2: 'Roca',
+            carrer: 'Avinguda Barcelona',
+            numero: '145',
+            pis: '2',
+            porta: 'B',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '618205849',
+        },
+        tipus: 'repartiment a domicili',
+        'botiga.empleat': {
+            nom: 'Judit',
+            rol: 'repatidor'
+        },
+        data_hora_domicili: ISODate('2020-10-02T20:18:38Z'),
+        detall_comanda: {
+            pizza: [
+                {
+                    nom: 'Pizza mitjana Pepperoni',
+                    descripcio: 'La nostra masa de sempre acompanyada de doble racció de pepperoni i formatge fos.',
+                    imatge: 'imatges/pepperoni.jpg',
+                    preu: 9.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
+                }
+            ],
+            hamburguesa: [
+                {
+                    nom: 'Hamburguesa Pollastre',
+                    descripcio: 'Carn de pollastre empanat i lleugerament especiat, enciam i maionesa',
+                    imatge: 'imatges/pepperoni.jpg',
+                    preu: 4.95,
+                    tipus: 'hamburgueses',
+                    categoria_pizza: ""
+                }
+            ],
+            beguda: [
+                {
+                    nom: 'Coca-cola (inclosa amb la pizza)',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 0,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                },
+                {
+                    nom: 'Coca-cola',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 2.35,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                }
+            ]
+        }
     },
     {
-        comanda_id: 1,
-        pizza_id: 3,
-        hamburguesa_id: null,
-        begudes_id: null,
+        _id: 5,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
+        data_hora_botiga: ISODate('2020-10-30T17:25:00Z'),
+        preu_total: 9.95,
+        client: {
+            nom: 'Jordi',
+            cognom1: 'Sanchez',
+            cognom2: 'Terol',
+            carrer: 'Avinguda Jacint Verdaguer',
+            numero: '24',
+            pis: '3',
+            porta: 'A',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '624879245'
+        },
+        tipus: 'repartiment a domicili',
+        'botiga.empleat': {
+            nom: 'Judit',
+            rol: 'repartidor'
+        },
+        data_hora_domicili: ISODate('2020-10-30T21:56:02Z'),
+        detall_comanda: {
+            pizza: [
+                {
+                    nom: 'Pizza mitjana 4 formatges',
+                    descripcio: 'Masa fresca, mescla de quatre formatges i tomàquet.',
+                    imatge: 'imatges/4quesos.jpg',
+                    preu: 9.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
+                }
+            ],
+            hamburguesa: [],
+            beguda: [
+                {
+                    nom: 'Coca-cola (inclosa amb la pizza)',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 0,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                }
+            ]
+        }
+    },
+    {
+        _id: 6,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
+        data_hora_botiga: ISODate('2020-11-05T20:01:45Z'),
+        preu_total: 7.3,
+        client: {
+            nom: 'Gregori',
+            cognom1: 'Jimenez',
+            cognom2: 'Alvarez',
+            carrer: 'Carrer Major',
+            numero: '24',
+            pis: '1',
+            porta: 'B',
+            localitat: 'Vilanova del Camí',
+            codi_postal: '08788',
+            telefon: '699458785'
+        },
+        tipus: 'repartiment a domicili',
+        'botiga.empleat': {
+            nom: 'Albert',
+            rol: 'repartidor'
+        },
+        data_hora_domicili: ISODate('2020-11-05T20:29:50Z'),
+        detall_comanda: {
+            pizza: [],
+            hamburguesa: [
+                {
+                    nom: 'Hamburguesa Clàsica',
+                    descripcio: 'La nostra carn a la graella, acompanyada de cogombret, kétchup i mostassa.',
+                    imatge: 'imatges/burguer.jpg',
+                    preu: 4.95,
+                    tipus: 'hamburgueses',
+                    categoria_pizza: ""
+                }
+            ],
+            beguda: [
+                {
+                    nom: 'Coca-cola',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 2.35,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                }
+            ]
+        }
+    },
+    {
+        _id: 7,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
+        data_hora_botiga: ISODate('2020-11-08T17:27:03Z'),
+        preu_total: 26.35,
+        client: {
+            nom: 'Alícia',
+            cognom1: 'Cárdenas',
+            cognom2: 'Herrera',
+            carrer: 'Carrer Santa Maria',
+            numero: '20',
+            pis: '3',
+            porta: 'A',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '691452387',
+        },
+        tipus: 'repartiment a domicili',
+        'botiga.empleat': {
+            nom: 'Judit',
+            rol: 'repartidor'
+        },
+        data_hora_domicili: ISODate('2020-12-02T20:13:02Z'),
+        detall_comanda: {
+            pizza: [
+                {
+                    nom: 'Pizza mitjana Barbacoa',
+                    descripcio: 'Masa fresca, bacon, pollastre, formatge fos, salsa barbacoa i doble de carn de bou.',
+                    imatge: 'imatges/carbonara.jpg',
+                    preu: 9.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
+                },
+                {
+                    nom: 'Pizza mitjana Carbonara',
+                    descripcio: 'Masa fresca, doble de bacon, champinyons, salsa carbonara, formatge fos i extra de formatge fos',
+                    imatge: 'imatges/carbonara.jpg',
+                    preu: 9.95,
+                    tipus: 'pizzes',
+                    categoria_pizza: 'Pizza mitjana més beguda a 9.95 a domicili'
+                }  
+            ],
+            hamburguesa: [
+                {
+                    nom: 'Hamburguesa Pollastre',
+                    descripcio: 'Carn de pollastre empanat i lleugerament especiat, enciam i maionesa',
+                    imatge: 'imatges/pepperoni.jpg',
+                    preu: 4.95,
+                    tipus: 'hamburgueses',
+                    categoria_pizza: ""
+                }
+            ],
+            beguda: [
+                {
+                    nom: 'Coca-cola (inclosa amb la pizza)',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 0,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                },
+                {
+                    nom: 'Coca-cola (inclosa amb la pizza)',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/coca-cola.jpg',
+                    preu: 0,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                },
+                {
+                    nom: 'Aigua Bezoya',
+                    descripcio: 'Ampolla 33cl',
+                    imatge: 'imatges/aigua.jpg',
+                    preu: 1.5,
+                    tipus: 'begudes',
+                    categoria_pizza: ""
+                }
+            ]
+        }
     }
 ]);
