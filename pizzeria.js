@@ -144,7 +144,6 @@ db.producte.insertMany([
 /* botiga i empleats */
 db.createCollection('botiga');
 db.botiga.insertOne({
-    botiga_id: 1,
     carrer: 'Avinguda Caresmar',
     numero: '23',
     codi_postal: '08700',
@@ -274,8 +273,13 @@ db.dades_client.insertMany([
 db.createCollection('comanda');
 db.comanda.insertMany([
     {
-        _id: 1,
-        botiga_id: 1,
+        botiga: {
+            carrer: 'Avinguda Caresmar',
+            numero: '23',
+            codi_postal: '08700',
+            localitat: 'Igualada',
+            telefon: '938053838',
+        },
         data_hora_botiga: ISODate('2020-05-18T19:45:12Z'),
         preu_total: 28.35,
         client: {
@@ -293,6 +297,9 @@ db.comanda.insertMany([
         tipus: 'repartiment a domicili',
         empleat: {
             nom: 'Albert',
+            cognoms: 'Compte Oriol',
+            nif: '98921097Y',
+            telefon: '697523748',
             rol: 'repartidor'
         },
         data_hora_domicili: ISODate('2020-05-10T22:15:00Z'),
@@ -328,7 +335,6 @@ db.comanda.insertMany([
         }
     },
     {
-        _id: 2,
         botiga: {
             carrer: 'Avinguda Caresmar',
             numero: '23',
@@ -351,10 +357,7 @@ db.comanda.insertMany([
             telefon: '699213515',
         },
         tipus: 'recollir en botiga',
-        'botiga.empleat': {
-            nom: "Albert",
-            rol: 'repartidor'
-        },
+        empleat: null,
         data_hora_domicili: null,
         detall_comanda: {
             pizza: [
@@ -397,7 +400,6 @@ db.comanda.insertMany([
         }
     },
     {
-        _id: 3,
         botiga: {
             carrer: 'Avinguda Caresmar',
             numero: '23',
@@ -420,8 +422,11 @@ db.comanda.insertMany([
             telefon: '687541827'
         },
         tipus: 'repartiment a domicili',
-        'botiga.empleat': {
+        empleat: {
             nom: 'Judit',
+            cognoms: 'Sans Poblet',
+            nif: '26507643M',
+            telefon: '621547813',
             rol: 'repartidor'
         },
         data_hora_domicili: ISODate('2020-06-21T20:52:08Z'),
@@ -450,7 +455,6 @@ db.comanda.insertMany([
         }
     },
     {
-        _id: 4,
         botiga: {
             carrer: 'Avinguda Caresmar',
             numero: '23',
@@ -473,9 +477,12 @@ db.comanda.insertMany([
             telefon: '618205849',
         },
         tipus: 'repartiment a domicili',
-        'botiga.empleat': {
+        empleat: {
             nom: 'Judit',
-            rol: 'repatidor'
+            cognoms: 'Sans Poblet',
+            nif: '26507643M',
+            telefon: '621547813',
+            rol: 'repartidor'
         },
         data_hora_domicili: ISODate('2020-10-02T20:18:38Z'),
         detall_comanda: {
@@ -520,7 +527,6 @@ db.comanda.insertMany([
         }
     },
     {
-        _id: 5,
         botiga: {
             carrer: 'Avinguda Caresmar',
             numero: '23',
@@ -543,8 +549,11 @@ db.comanda.insertMany([
             telefon: '624879245'
         },
         tipus: 'repartiment a domicili',
-        'botiga.empleat': {
+        empleat: {
             nom: 'Judit',
+            cognoms: 'Sans Poblet',
+            nif: '26507643M',
+            telefon: '621547813',
             rol: 'repartidor'
         },
         data_hora_domicili: ISODate('2020-10-30T21:56:02Z'),
@@ -573,7 +582,6 @@ db.comanda.insertMany([
         }
     },
     {
-        _id: 6,
         botiga: {
             carrer: 'Avinguda Caresmar',
             numero: '23',
@@ -596,8 +604,11 @@ db.comanda.insertMany([
             telefon: '699458785'
         },
         tipus: 'repartiment a domicili',
-        'botiga.empleat': {
+        empleat: {
             nom: 'Albert',
+            cognoms: 'Compte Oriol',
+            nif: '98921097Y',
+            telefon: '697523748',
             rol: 'repartidor'
         },
         data_hora_domicili: ISODate('2020-11-05T20:29:50Z'),
@@ -626,7 +637,6 @@ db.comanda.insertMany([
         }
     },
     {
-        _id: 7,
         botiga: {
             carrer: 'Avinguda Caresmar',
             numero: '23',
@@ -649,8 +659,11 @@ db.comanda.insertMany([
             telefon: '691452387',
         },
         tipus: 'repartiment a domicili',
-        'botiga.empleat': {
+        empleat: {
             nom: 'Judit',
+            cognoms: 'Sans Poblet',
+            nif: '26507643M',
+            telefon: '621547813',
             rol: 'repartidor'
         },
         data_hora_domicili: ISODate('2020-12-02T20:13:02Z'),
