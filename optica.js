@@ -1,5 +1,6 @@
 var db = connect( 'mongodb://localhost/optica' );
 /* dades clients òptica */
+/*
 db.createCollection('dades_client');
 db.dades_client.insertMany([
 {
@@ -95,6 +96,7 @@ db.dades_client.insertMany([
 }
 ]);
 /* marques d'ulleres */
+/*
 db.createCollection('marca');
 db.marca.insertMany([
 {
@@ -147,6 +149,7 @@ db.marca.insertMany([
 }
 ])
 /* ulleres disponibles */
+/*
 db.createCollection('ulleres');
 db.ulleres.insertMany([
 {
@@ -192,6 +195,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Francesc',
     ulleres: {
+        proveidor: {
+            nom: 'Fortive Corporation',
+            carrer: 'Fairfield Hill',
+            numero: '4',
+            pis: null,
+            porta: null,
+            ciutat: 'Tucson',
+            codi_postal: '85754',
+            pais: 'United States',
+            telefon: '520-529-2538',
+            fax: null,
+            nif: '47-4286945'
+        },
         marca: 'Pedro del Hierro',
         model: 'Antonella',
         graduacio_vidres: [1.75, 1.25],
@@ -218,6 +234,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Judit',
     ulleres: {
+        proveidor: {
+            nom: 'Fortive Corporation',
+            carrer: 'Fairfield Hill',
+            numero: '4',
+            pis: null,
+            porta: null,
+            ciutat: 'Tucson',
+            codi_postal: '85754',
+            pais: 'United States',
+            telefon: '520-529-2538',
+            fax: null,
+            nif: '47-4286945'
+        },
         marca: 'Pedro del Hierro',
         model: 'Francesca',
         graduacio_vidres: [-0.5, -0.75],
@@ -244,6 +273,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Laia',
     ulleres: {
+        proveidor: {
+            nom: 'Carter-Wiegand',
+            carrer: 'Alpine Park',
+            numero: '051',
+            pis: null,
+            porta: null,
+            ciutat: 'Huntsville',
+            codi_postal: '35895',
+            pais: 'United States',
+            telefon: '256-847-7735',
+            fax: null,
+            nif: '68-1369257'
+        },
         marca: 'Mango',
         model: 'Robert',
         graduacio_vidres: [1.25, 1.75],
@@ -270,6 +312,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Judit',
     ulleres: {
+        proveidor: {
+            nom: 'Fortive Corporation',
+            carrer: 'Fairfield Hill',
+            numero: '4',
+            pis: null,
+            porta: null,
+            ciutat: 'Tucson',
+            codi_postal: '85754',
+            pais: 'United States',
+            telefon: '520-529-2538',
+            fax: null,
+            nif: '47-4286945'
+        },
         marca: 'Pedro del Hierro',
         model: 'Antonella',
         graduacio_vidres: [1.75, 1.25],
@@ -296,6 +351,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Laia',
     ulleres: {
+        proveidor: {
+            nom: 'Nice Eyewear Group',
+            carrer: 'Anniversary Alley',
+            numero: '3097',
+            pis: null,
+            porta: null,
+            ciutat: 'Norfolk',
+            codi_postal: '23509',
+            pais: 'United States',
+            telefon: '757-829-0812',
+            fax: null,
+            nif: '31-6765838'
+        },
         marca: 'Custo Barcelona',
         model: 'Shake',
         graduacio_vidres: [0.75, 0.75],
@@ -322,6 +390,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Laia',
     ulleres: {
+        proveidor: {
+            nom: 'Fortive Corporation',
+            carrer: 'Fairfield Hill',
+            numero: '4',
+            pis: null,
+            porta: null,
+            ciutat: 'Tucson',
+            codi_postal: '85754',
+            pais: 'United States',
+            telefon: '520-529-2538',
+            fax: null,
+            nif: '47-4286945'
+        },
         marca: 'Pedro del Hierro',
         model: 'Francesca',
         graduacio_vidres: [-0.5, -0.75],
@@ -348,6 +429,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat:'Judit',
     ulleres: {
+        proveidor: {
+            nom: 'Fortive Corporation',
+            carrer: 'Fairfield Hill',
+            numero: '4',
+            pis: null,
+            porta: null,
+            ciutat: 'Tucson',
+            codi_postal: '85754',
+            pais: 'United States',
+            telefon: '520-529-2538',
+            fax: null,
+            nif: '47-4286945'
+        },
         marca: 'Pedro del Hierro',
         model: 'Antonella',
         graduacio_vidres: [1.75, 1.25],
@@ -375,6 +469,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Francesc',
     ulleres: {
+        proveidor: {
+            nom: 'Nice Eyewear Group',
+            carrer: 'Anniversary Alley',
+            numero: '3097',
+            pis: null,
+            porta: null,
+            ciutat: 'Norfolk',
+            codi_postal: '23509',
+            pais: 'United States',
+            telefon: '757-829-0812',
+            fax: null,
+            nif: '31-6765838'
+        },
         marca: 'Custo Barcelona',
         model: 'Shake',
         graduacio_vidres: [0.75, 0.75],
@@ -402,6 +509,19 @@ db.empleat_ha_venut_ulleres.insertMany([
 {
     empleat: 'Francesc',
     ulleres: {
+        proveidor: {
+            nom: 'Fortive Corporation',
+            carrer: 'Fairfield Hill',
+            numero: '4',
+            pis: null,
+            porta: null,
+            ciutat: 'Tucson',
+            codi_postal: '85754',
+            pais: 'United States',
+            telefon: '520-529-2538',
+            fax: null,
+            nif: '47-4286945'
+        },
         marca: 'Pedro del Hierro',
         model: 'Francesca',
         graduacio_vidres: [-0.5, -0.75],
